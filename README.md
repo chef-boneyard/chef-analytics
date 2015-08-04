@@ -1,6 +1,6 @@
 chef-analytics Cookbook
 =======================
-This cookbook configures a system to be a *AIO* Chef Analytics Server. It
+This cookbook configures a system to be a standalone Chef Analytics Server. It
 will install the appropriate platform-specific opscode-analytics Omnibus
 package from Package Cloud and perform the initial configuration.
 
@@ -11,10 +11,12 @@ This cookbook is tested with  Chef (client) 12. It may work with or
 without modification on earlier versions of Chef, but Chef 12 is
 recommended.
 
+This cookbook will also not properly install analytics unless you have copied
+actions-source.json into /etc/opscode-analytics from your chef-server.
+
 ## Cookbooks
 
-* chef-server-ingredient cookbook
-* chef-server cookbook
+* chef-ingredient cookbook
 
 ## Platform
 
@@ -53,12 +55,6 @@ Attributes
     <td><tt>node['fqdn']</tt></td>
   </tr>
   <tr>
-    <td><tt>['chef-analytics']['standalone']</tt></td>
-    <td>Boolean</td>
-    <td>Standalone or AIO Version</td>
-    <td><tt>false</tt></td>
-  </tr>
-  <tr>
     <td><tt>['chef-analytics']['configuration']</tt></td>
     <td>Hash</td>
     <td>Arbitrary config to add to opscode-analytics.rb</td>
@@ -70,25 +66,7 @@ Usage
 -----
 #### chef-analytics::default
 
-The easiest way to get a Chef Analytics Server up and running is to install
-chef-solo (via the chef-client Omnibus packages) and bootstrap the
-system using this cookbook:
-
-
-    # install chef-solo
-    curl -L https://www.chef.io/chef/install.sh | sudo bash
-    # create required bootstrap dirs/files
-    sudo mkdir -p /var/chef/cache /var/chef/cookbooks
-    # pull down this chef-server cookbook
-    wget -qO- https://supermarket.chef.io/cookbooks/chef-server/download | sudo tar xvzC /var/chef/cookbooks
-    # pull down dependency cookbooks
-    wget -qO- https://supermarket.chef.io/cookbooks/chef-server-ingredient/download | sudo tar xvzC /var/chef/cookbooks
-    wget -qO- https://supermarket.chef.io/cookbooks/packagecloud/download | sudo tar xvzC /var/chef/cookbooks
-    # GO GO GO!!!
-    sudo chef-solo -o 'recipe[chef-server::default]'
-
-Be sure to download and untar the `chef-server-ingredient` and
-`packagecloud` cookbooks. They're dependencies of this cookbook.
+Add chef-analytics to your run list.
 
 
 # License and Authors
