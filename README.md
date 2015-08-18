@@ -43,7 +43,7 @@ Attributes
     <td><tt>nil</tt></td>
   </tr>
   <tr>
-    <td><tt>['chef-analytics']['package-source']</tt></td>
+    <td><tt>['chef-analytics']['package_source']</tt></td>
     <td>String</td>
     <td>Anything other than package cloud</td>
     <td><tt>nil</tt></td>
