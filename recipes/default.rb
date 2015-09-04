@@ -17,7 +17,7 @@
 chef_ingredient 'analytics' do
   version node['chef-analytics']['version']
   package_source node['chef-analytics']['package_source']
-  action :install
+  action :upgrade
 end
 
 directory '/etc/opscode-analytics' do
