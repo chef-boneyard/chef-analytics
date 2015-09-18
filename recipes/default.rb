@@ -35,5 +35,5 @@ template '/etc/opscode-analytics/opscode-analytics.rb' do
   group 'root'
   action :create
   notifies :reconfigure, 'chef_ingredient[analytics]', :immediately
-  only_if { File.exists?('/etc/opscode-analytics/actions-source.json') }
+  only_if { File.exist?('/etc/opscode-analytics/actions-source.json') }
 end
