@@ -1,7 +1,7 @@
 name 'chef-analytics'
 maintainer 'Chef Software, Inc.'
 maintainer_email 'edavis@chef.io'
-license 'All rights reserved'
+license 'Apache 2.0'
 description 'Installs/Configures chef-analytics'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.1.0'
