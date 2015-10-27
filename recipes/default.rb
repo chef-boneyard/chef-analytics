@@ -15,6 +15,7 @@
 #
 
 chef_ingredient 'analytics' do
+  channel node['chef-analytics']['channel']
   version node['chef-analytics']['version']
   package_source node['chef-analytics']['package_source']
   action :upgrade
