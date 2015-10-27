@@ -19,6 +19,7 @@
 #
 default['chef-analytics']['version'] = nil
 default['chef-analytics']['package_source'] = nil
+default['chef-analytics']['channel'] = :stable
 
 # The Chef Analytics Server must have an API FQDN set.
 # https://docs.chef.io/install_analytics.html
