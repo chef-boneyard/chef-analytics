@@ -2,7 +2,6 @@ chef-analytics Cookbook
 =======================
 
 [![Build Status](https://travis-ci.org/chef-cookbooks/chef-analytics.svg?branch=master)](https://travis-ci.org/chef-cookbooks/chef-analytics)
-[![Cookbook Version](https://img.shields.io/cookbook/v/chef-analytics.svg)](https://supermarket.chef.io/cookbooks/chef-analytics)
 
 This cookbook configures a system to be a standalone Chef Analytics Server. It
 will install the appropriate platform-specific opscode-analytics Omnibus
