@@ -9,7 +9,9 @@ provisioner:
 
 platforms:
   - name: ubuntu-12.04
+  - name: ubuntu-14.04
   - name: centos-6.7
+  - name: centos-7.2
 
 suites:
   - name: default
@@ -17,4 +19,5 @@ suites:
       - recipe[chef-analytics]
     attributes:
       chef-analytics:
+        accept_license: true
         fqdn: 'analytics.chef.piab'
