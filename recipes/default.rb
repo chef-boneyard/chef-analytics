@@ -18,6 +18,7 @@ chef_ingredient 'analytics' do
   channel node['chef-analytics']['channel'].to_sym
   version node['chef-analytics']['version']
   package_source node['chef-analytics']['package_source']
+  accept_license node['chef-analytics']['accept_license'] unless node['chef-analytics']['accept_license'].nil?
   action :upgrade
 end
 
