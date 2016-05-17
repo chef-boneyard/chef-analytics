@@ -25,8 +25,12 @@ default['chef-analytics']['channel'] = :stable
 # https://docs.chef.io/install_analytics.html
 default['chef-analytics']['api_fqdn'] = node['fqdn']
 
+# Chef requires agreement to the MLSA
+# https://www.chef.io/online-master-agreement/
+default['chef-analytics']['accept_license'] = false
+
 #
-# Chef Server Tunables
+# Chef Analytics Tunables
 #
 # For a complete list see:
 # https://docs.chef.io/config_rb_analytics.html

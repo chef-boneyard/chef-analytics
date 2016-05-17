@@ -63,6 +63,12 @@ Attributes
     <td>Arbitrary config to add to opscode-analytics.rb</td>
     <td><tt>{}</tt></td>
   </tr>
+  <tr>
+    <td><tt>['chef-analytics']['accept_license']</tt></td>
+    <td>Boolean</td>
+    <td>Boolean value indicating you agree to the [Chef MLSA](https://www.chef.io/online-master-agreement/)</td>
+    <td><tt>false</tt></td>
+  </tr>
 </table>
 
 Usage
