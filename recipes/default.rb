@@ -14,13 +14,6 @@
 # limitations under the License.
 #
 
-ruby_block 'ensure node can resolve API FQDN' do
-  extend ChefAnalyticsCookbook::Helpers
-  block { repair_api_fqdn }
-  only_if { api_fqdn_available? }
-  not_if { api_fqdn_resolves? }
-end
-
 chef_ingredient 'analytics' do
   channel node['chef-analytics']['channel'].to_sym
   version node['chef-analytics']['version']
