@@ -27,13 +27,13 @@ This cookbook will also not properly install analytics unless you have copied ac
 
 ### chef-analytics::default
 
-Key                                           | Type    | Description                                                                                         | Default
---------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------- | ---------------------
-<tt>['chef-analytics']['version']</tt>        | String  | What version of analytics to install                                                                | <tt>nil</tt>
-<tt>['chef-analytics']['package_source']</tt> | String  | Anything other than package cloud                                                                   | <tt>nil</tt>
-<tt>['chef-analytics']['api_fqdn']</tt>       | String  | FQDN of host                                                                                        | <tt>node['fqdn']</tt>
-<tt>['chef-analytics']['configuration']</tt>  | Hash    | Arbitrary config to add to opscode-analytics.rb                                                     | <tt>{}</tt>
-<tt>['chef-analytics']['accept_license']</tt> | Boolean | Boolean value indicating you agree to the [Chef MLSA](https://www.chef.io/online-master-agreement/) | <tt>false</tt>
+Key                                  | Type    | Description                                                                                         | Default
+------------------------------------ | ------- | --------------------------------------------------------------------------------------------------- | ------------
+['chef-analytics']['version']        | String  | What version of analytics to install                                                                | nil
+['chef-analytics']['package_source'] | String  | Anything other than package cloud                                                                   | nil
+['chef-analytics']['api_fqdn']       | String  | FQDN of host                                                                                        | node['fqdn']
+['chef-analytics']['configuration']  | Hash    | Arbitrary config to add to opscode-analytics.rb                                                     | {}
+['chef-analytics']['accept_license'] | Boolean | Boolean value indicating you agree to the [Chef MLSA](https://www.chef.io/online-master-agreement/) | false
 
 ## Usage
 
