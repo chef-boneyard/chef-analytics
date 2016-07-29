@@ -1,87 +1,50 @@
-chef-analytics Cookbook
-=======================
+# chef-analytics Cookbook
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/chef-analytics.svg?branch=master)](https://travis-ci.org/chef-cookbooks/chef-analytics)
+[![Build Status](https://travis-ci.org/chef-cookbooks/chef-analytics.svg?branch=master)](https://travis-ci.org/chef-cookbooks/chef-analytics) [![Cookbook Version](https://img.shields.io/cookbook/v/chef-analytics.svg)](https://supermarket.chef.io/cookbooks/chef-analytics)
 
-This cookbook configures a system to be a standalone Chef Analytics Server. It
-will install the appropriate platform-specific opscode-analytics Omnibus
-package from Package Cloud and perform the initial configuration.
+This cookbook configures a system to be a standalone Chef Analytics Server. It will install the appropriate platform-specific opscode-analytics Omnibus package from Package Cloud and perform the initial configuration.
 
+## Requirements
 
-Requirements
-------------
-This cookbook is tested with  Chef (client) 12. It may work with or
-without modification on earlier versions of Chef, but Chef 12 is
-recommended.
+### Platforms
 
-This cookbook will also not properly install analytics unless you have copied
-actions-source.json into /etc/opscode-analytics from your chef-server.
+- Ubuntu 12.04/14.04
+- RHEL 6/7
 
-## Cookbooks
+### Chef
 
-* chef-ingredient cookbook
+- Chef 12.1+
 
-## Platform
+### Cookbooks
 
-This cookbook is tested on the following platforms using the
-[Test Kitchen](http://kitchen.ci) `.kitchen.yml` in the repository.
+- chef-ingredient cookbook
 
-- Ubuntu 12.04 64-bit
+### Misc
 
-Attributes
-----------
+This cookbook will also not properly install analytics unless you have copied actions-source.json into /etc/opscode-analytics from your chef-server.
 
-#### chef-analytics::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['chef-analytics']['version']</tt></td>
-    <td>String</td>
-    <td>What version of analytics to install</td>
-    <td><tt>nil</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['chef-analytics']['package_source']</tt></td>
-    <td>String</td>
-    <td>Anything other than package cloud</td>
-    <td><tt>nil</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['chef-analytics']['api_fqdn']</tt></td>
-    <td>String</td>
-    <td>FQDN of host</td>
-    <td><tt>node['fqdn']</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['chef-analytics']['configuration']</tt></td>
-    <td>Hash</td>
-    <td>Arbitrary config to add to opscode-analytics.rb</td>
-    <td><tt>{}</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['chef-analytics']['accept_license']</tt></td>
-    <td>Boolean</td>
-    <td>Boolean value indicating you agree to the [Chef MLSA](https://www.chef.io/online-master-agreement/)</td>
-    <td><tt>false</tt></td>
-  </tr>
-</table>
+## Attributes
 
-Usage
------
-#### chef-analytics::default
+### chef-analytics::default
+
+Key                                           | Type    | Description                                                                                         | Default
+--------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------- | ---------------------
+<tt>['chef-analytics']['version']</tt>        | String  | What version of analytics to install                                                                | <tt>nil</tt>
+<tt>['chef-analytics']['package_source']</tt> | String  | Anything other than package cloud                                                                   | <tt>nil</tt>
+<tt>['chef-analytics']['api_fqdn']</tt>       | String  | FQDN of host                                                                                        | <tt>node['fqdn']</tt>
+<tt>['chef-analytics']['configuration']</tt>  | Hash    | Arbitrary config to add to opscode-analytics.rb                                                     | <tt>{}</tt>
+<tt>['chef-analytics']['accept_license']</tt> | Boolean | Boolean value indicating you agree to the [Chef MLSA](https://www.chef.io/online-master-agreement/) | <tt>false</tt>
+
+## Usage
+
+### chef-analytics::default
 
 Add chef-analytics to your run list.
 
+## License and Authors
 
-# License and Authors
-
-* Author: Elliott Davis <edavis@chef.io>
-* Copyright 2012-2015, Chef Software, Inc
+- Author: Elliott Davis [edavis@chef.io](mailto:edavis@chef.io)
+- Copyright 2012-2016, Chef Software, Inc
 
 ```text
 Licensed under the Apache License, Version 2.0 (the "License");
