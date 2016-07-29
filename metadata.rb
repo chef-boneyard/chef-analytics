@@ -8,5 +8,11 @@ version '0.2.0'
 
 depends 'chef-ingredient', '>= 0.12.0'
 
-source_url 'https://github.com/chef-cookbooks/chef-analytics' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/chef-analytics/issues' if respond_to?(:issues_url)
+%w(ubuntu redhat centos).each do |os|
+  supports os
+end
+
+source_url 'https://github.com/chef-cookbooks/chef-analytics'
+issues_url 'https://github.com/chef-cookbooks/chef-analytics/issues'
+
+chef_version '>= 12.1' if respond_to?(:chef_version)
