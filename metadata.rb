@@ -6,7 +6,7 @@ description 'Installs/Configures chef-analytics'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.2.1'
 
-depends 'chef-ingredient', '>= 0.12.0'
+depends 'chef-ingredient', '>= 0.18.3'
 
 %w(ubuntu redhat centos).each do |os|
   supports os
