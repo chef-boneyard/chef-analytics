@@ -5,7 +5,7 @@ driver:
     cpus: 4
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu-12.04
