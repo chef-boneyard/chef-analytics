@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the chef-analytics cookbook.
 
+## v0.2.2 (2016-07-29)
+
+- Increased the chef-ingredient requirement to 0.18.3 to support accepting the EULA
+
 ## v0.2.1 (2016-07-29)
 
 - Improved requirements section in the readme and removed HTML table
