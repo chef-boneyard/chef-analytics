@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the chef-analytics cookbook.
 
+## v0.2.3 (2016-08-22)
+
+- Fixes Issue [#9](https://github.com/chef-cookbooks/chef-analytics/issues/9)
+- set chef_ingredient action to `:install` when an explicit version is found
+- added helper method `ChefCookbooks::Helpers#install_or_upgrade?`
+- added ChefSpec examples
+
 ## v0.2.2 (2016-07-29)
 
 - Increased the chef-ingredient requirement to 0.18.3 to support accepting the EULA
