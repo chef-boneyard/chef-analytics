@@ -7,6 +7,8 @@ This file is used to list changes made in each version of the chef-analytics coo
 - Fixes Issue [#9](https://github.com/chef-cookbooks/chef-analytics/issues/9)
 - set chef_ingredient action to `:install` when an explicit version is found
 - added ChefSpec examples
+- squash Chef 13 WARN: An attempt was made to change version from :latest to nil
+  by calling version(nil).
 
 ## v0.2.2 (2016-07-29)
 
