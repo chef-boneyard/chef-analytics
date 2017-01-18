@@ -16,10 +16,14 @@
 
 chef_ingredient 'analytics' do
   channel node['chef-analytics']['channel'].to_sym
-  version node['chef-analytics']['version']
+  unless node['chef-analytics']['version'].nil?
+    version node['chef-analytics']['version']
+  end
   package_source node['chef-analytics']['package_source']
-  accept_license node['chef-analytics']['accept_license'] unless node['chef-analytics']['accept_license'].nil?
-  action :upgrade
+  unless node['chef-analytics']['accept_license'].nil?
+    accept_license node['chef-analytics']['accept_license']
+  end
+  action node['chef-analytics']['version'].nil? ? :upgrade : :install
 end
 
 directory '/etc/opscode-analytics' do
@@ -37,5 +41,5 @@ template '/etc/opscode-analytics/opscode-analytics.rb' do
   group 'root'
   action :create
   notifies :reconfigure, 'chef_ingredient[analytics]', :immediately
-  only_if { File.exist?('/etc/opscode-analytics/actions-source.json') }
+  only_if { ::File.exist?('/etc/opscode-analytics/actions-source.json') }
 end
