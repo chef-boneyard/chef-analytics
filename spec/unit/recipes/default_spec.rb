@@ -16,8 +16,8 @@ describe 'default recipe on Ubuntu 14.04' do
   end
 
   it 'created /etc/opscode-analytics' do
-    expect(chef_run).to create_directory('/etc/opscode-analytics').with(
-      owner: 'root', group: 'root', mode: '0755', recursive: true)
+    expect(chef_run).to create_directory('/etc/opscode-analytics')
+      .with(owner: 'root', group: 'root', mode: '0755', recursive: true)
   end
 
   it 'chef_ingredient upgraded analytics to latest' do
@@ -29,8 +29,8 @@ describe 'default recipe on Ubuntu 14.04' do
     allow(::File).to receive(:exist?)
       .with('/etc/opscode-analytics/actions-source.json')
       .and_return(true)
-    expect(chef_run).to create_template(@analytics_file).with(
-      owner: 'root', group: 'root', source: 'opscode-analytics.rb.erb')
+    expect(chef_run).to create_template(@analytics_file)
+      .with(owner: 'root', group: 'root', source: 'opscode-analytics.rb.erb')
   end
 
   it 'notifies analytics reconfigure' do
@@ -48,8 +48,8 @@ describe 'default recipe on Ubuntu 14.04' do
     end
 
     it 'chef_ingredient installed analytics 1.4.0' do
-      expect(chef_run).to install_chef_ingredient('analytics').with(
-        version: '1.4.0')
+      expect(chef_run).to install_chef_ingredient('analytics')
+        .with(version: '1.4.0')
     end
   end
 end
